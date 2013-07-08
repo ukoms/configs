@@ -70,7 +70,7 @@ print_help(){
 
 bash_profile_edit(){
     case "$1" in
-        [-h] | [--help]*)
+        -h*|--help*)
             print_help bash_profile_edit
         ;;
         *)
@@ -89,7 +89,7 @@ bash_profile_edit(){
 
 bash_profile_reload(){
     case "$1" in
-        [-h] | [--help]*)
+        -h*|--help*)
             print_help bash_profile_reload
         ;;
         *)
@@ -111,7 +111,7 @@ bash_profile_reload(){
 config_syncer()
 {
     case "$1" in
-        [-h] | [--help]*)
+        -h*|--help*)
             print_help config_syncer
         ;;
         codosu)
@@ -140,7 +140,7 @@ config_syncer()
 
 directory_go(){
     case "$1" in
-        [-h] | [--help]*)
+        -h*|--help*)
             print_help directory_go
         ;;
         *)
@@ -161,11 +161,11 @@ directory_go(){
 
 file_edit(){
     case "$1" in
-        [-h] | [--help]*)
+        -h*|--help*)
             print_help file_edit
         ;;
         *)
-        mc -e $1
+            mcedit $1
         ;;
     esac
 }

@@ -1,5 +1,8 @@
 ####### ALIASES ######
 
+# quick ack search
+alias a='ack -i -Q -H -A 10 -B 5 --color-filename=green --color-match=yellow'
+
 # fast edit .bash_profile
 alias bpe=bash_profile_edit
 
@@ -18,11 +21,17 @@ alias fe=file_edit
 # main git alias
 alias g='git'
 
+# more useful grep
+alias grep='grep -rnE --color'
+
 # too much for typing ;)
 alias h='cd'
 
 # list files in one column (+ . beginning files)
 alias l='ls -1 -a'
+
+# make direcotries with autovivification
+alias mkdir='mkdir -pv'
 
 ####### HELP FUNCTIONS #######
 
@@ -120,7 +129,7 @@ config_syncer()
         ;;
         sudoco)
             cp -b -i -v ~/public_html/s/.gitconfig ~/.gitconfig
-            cp -b -i -v ~/public_html/s/.bash_profle ~/.bash_profile
+            cp -b -i -v ~/public_html/s/.bash_profile ~/.bash_profile
         ;;
         *)
             echo "Wrong arg, reptile!";

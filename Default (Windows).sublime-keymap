@@ -1,0 +1,20 @@
+[
+    { "keys": ["ctrl+alt+a"], "command": "insert", "args": {"characters": "ą"} },
+    { "keys": ["ctrl_alt+shift+a"], "command": "insert", "args": {"characters": "Ą"} },
+    { "keys": ["ctrl+alt+c"], "command": "insert", "args": {"characters": "ć"} },
+    { "keys": ["ctrl_alt+shift+c"], "command": "insert", "args": {"characters": "Ć"} },
+    { "keys": ["ctrl+alt+e"], "command": "insert", "args": {"characters": "ę"} },
+    { "keys": ["ctrl_alt+shift+e"], "command": "insert", "args": {"characters": "Ę"} },
+    { "keys": ["ctrl+alt+l"], "command": "insert", "args": {"characters": "ł"} },
+    { "keys": ["ctrl_alt+shift+l"], "command": "insert", "args": {"characters": "Ł"} },
+    { "keys": ["ctrl+alt+n"], "command": "insert", "args": {"characters": "ń"} },
+    { "keys": ["ctrl_alt+shift+n"], "command": "insert", "args": {"characters": "Ń"} },
+    { "keys": ["ctrl+alt+o"], "command": "insert", "args": {"characters": "ó"} },
+    { "keys": ["ctrl_alt+shift+o"], "command": "insert", "args": {"characters": "Ó"} },
+    { "keys": ["ctrl+alt+s"], "command": "insert", "args": {"characters": "ś"} },
+    { "keys": ["ctrl_alt+shift+s"], "command": "insert", "args": {"characters": "Ś"} },
+    { "keys": ["ctrl+alt+x"], "command": "insert", "args": {"characters": "ź"} },
+    { "keys": ["ctrl_alt+shift+x"], "command": "insert", "args": {"characters": "Ź"} },
+    { "keys": ["ctrl+alt+z"], "command": "insert", "args": {"characters": "ż"} },
+    { "keys": ["ctrl_alt+shift+z"], "command": "insert", "args": {"characters": "Ż"} }
+]

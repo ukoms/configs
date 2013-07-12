@@ -1,13 +1,16 @@
 ####### ALIASES ######
 
 # quick ack search
-alias a='ack -i -Q -H -A 10 -B 5 --color-filename=green --color-match=yellow'
+alias a='ack -i -Q -H -A 10 -B 5 --color-filename=red --color-match=green'
 
 # fast edit .bash_profile
 alias bpe=bash_profile_edit
 
 # reset .bash_profile - after modifications
 alias bpr=bash_profile_reload
+
+# clear screen
+alias c=clear
 
 # syncing config files
 alias cfs=config_syncer
@@ -17,9 +20,6 @@ alias dg=directory_go
 
 # run file in editor
 alias fe=file_edit
-
-# main git alias
-alias g='git'
 
 # more useful grep
 alias grep='grep -rnE --color'
@@ -32,6 +32,94 @@ alias l='ls -1 -a'
 
 # make direcotries with autovivification
 alias mkdir='mkdir -pv'
+
+###### SAFETY ALIASES ######
+
+# copy file
+alias cp='cp -i'
+
+# move file
+alias mv='mv -i'
+
+# remove file
+alias rm='rm -i'
+
+###### GIT ALIASES #######
+
+# main git alias
+alias g='git'
+
+# add unstaged files to stage (prepare to commit)
+alias gadd="git add"
+
+# show local branches
+alias gbr='git branch'
+
+# simple commit with message
+alias gc='git commit -m'
+
+# add file to stage, commit and push to origin master
+alias gcm=git_commit
+
+# switch to branch
+alias gco='git checkout'
+
+# show diff of unstaged files
+alias gdu='git diff'
+
+# show diff of staged files
+alias gds='git diff --staged'
+
+# pretty log with YYYY-MM-DD HH:MM:SS date format
+alias glog="git log --date=iso --pretty=format:'%C(green)%h%Creset %C(cyan)%ad%x08%x08%x08%x08%x08%Creset %s %C(green)[%Creset%C(cyan)%an%Creset%C(green)]%Creset'"
+
+# send changes to somewhere
+alias gp='git push'
+
+# send commited changes directly to origin branch repo
+alias gpoc='git push origin `git current-branch`'
+
+# send localt master to origin (think before doing)
+alias gpom='git push origin master'
+
+# sync local master
+alias gpuf='git pull --ff'
+
+# show branches on remote repo
+alias grso='git remote show origin'
+
+# full status
+alias gs='git status'
+
+# shortened status
+alias gss='git status -s'
+
+# update branch with origin master
+alias gsync="git merge origin/master"
+
+# unstage files (remove from commiting)
+alias guns='git reset HEAD --'
+
+# commit step by step - what to commit, change by change
+alias gvii='git commit -v --patch'
+
+###### OTHER SETTINGS, STUFF AND SILVA RERUM ######
+
+# prompt with git actual branch name
+# install:
+# 1. curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
+# 2. import below
+source ~/.git-prompt.sh
+PS1='[\t \w $(__git_ps1)]: '
+
+# git autocomplete
+# install:
+# 1. curl https://raw.github.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+# 2. chmod -X ~/.git-completion.bash
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 ####### HELP FUNCTIONS #######
 
@@ -166,7 +254,7 @@ directory_go(){
 # @input
 #   * 0: (STRING) file to edit
 # @output
-#   Brak
+#   None
 
 file_edit(){
     case "$1" in
@@ -175,6 +263,28 @@ file_edit(){
         ;;
         *)
             mcedit $1
+        ;;
+    esac
+}
+
+# @function git_commit
+# @descr
+#   Speed up git file commiting
+# @input
+#   * 0: (STRING) file to commit
+#   * 1: (STRING) commit message
+# @output
+#   None
+
+git_commit(){
+    case "$1" in
+        -h*|--help*)
+            print_help git_commit
+        ;;
+        *)
+            ga $1
+            gc $2
+            gpoc
         ;;
     esac
 }

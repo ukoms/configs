@@ -105,12 +105,46 @@ alias gvii='git commit -v --patch'
 
 ###### OTHER SETTINGS, STUFF AND SILVA RERUM ######
 
+# colors for prompt
+# Reset
+RESET='\[\033[0m\]'
+
+# Regular
+R_BLACK='\[\033[0;30m\]'
+R_RED='\[\033[0;31m\]'
+R_GREEN='\[\033[0;32m\]'
+R_YELLOW='\[\033[0;33m\]'
+R_BLUE='\[\033[0;34m\]'
+R_PURPLE='\[\033[0;35m\]'
+R_CYAN='\[\033[0;36m\]'
+R_WHITE='\[\033[0;37m\]'
+
+# Bold
+B_BLACK='\[\033[1;30m\]'
+B_RED='\[\033[1;31m\]'
+B_GREEN='\[\033[1;32m\]'
+B_YELLOW='\[\033[1;33m\]'
+B_BLUE='\[\033[1;34m\]'
+B_PURPLE='\[\033[1;35m\]'
+B_CYAN='\[\033[1;36m\]'
+B_WHITE='\[\033[1;37m\]'
+
+# High Intensity
+I_BLACK='\[\033[0;90m\]'
+I_RED='\[\033[0;91m\]'
+I_GREEN='\[\033[0;92m\]'
+I_YELLOW='\[\033[0;93m\]'
+I_BLUE='\[\033[0;94m\]'
+I_PURPLE='\[\033[0;95m\]'
+I_CYAN='\[\033[0;96m\]'
+I_WHITE='\[\033[0;97m\]'
+
 # prompt with git actual branch name
 # install:
 # 1. curl https://raw.github.com/git/git/master/contrib/completion/git-prompt.sh -o ~/.git-prompt.sh
 # 2. import below
 source ~/.git-prompt.sh
-PS1='[\t \w $(__git_ps1)]: '
+PS1="${R_GREEN}[${R_YELLOW}\t  ${R_GREEN}\w${I_RED} \$(__git_ps1)${R_GREEN}]:${RESET}"
 
 # git autocomplete
 # install:

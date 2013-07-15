@@ -50,7 +50,10 @@ alias rm='rm -i'
 alias g='git'
 
 # add unstaged files to stage (prepare to commit)
-alias gadd="git add"
+alias gadd='git add'
+
+# choose which changes from file add to stage
+alias gadp='git add -p'
 
 # show local branches
 alias gbr='git branch'

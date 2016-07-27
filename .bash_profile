@@ -103,6 +103,19 @@ alias grso='git remote show origin'
 alias gs='git status'
 # shortened status
 alias gss='git status -s'
+# add everything to stash
+alias gsta='git stash'
+# clear stash
+alias gstac='git stash clear'
+# show stash diff
+alias gstad=git_stash_diff
+git_stash_diff(){
+    git stash show -p stash@{$1}
+}
+# show files in stash
+alias gstal='git stash list'
+# apply changes from stash
+alias gstap='git stash apply'
 # commit statistics
 alias gstat='git shortlog -s -n --all'
 # update branch with origin master

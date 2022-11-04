@@ -7,3 +7,4 @@ configs, shortcuts, aliases, settings - useful (for me) stuff
 .gitconfig - same as above but with git
 
 THIS IS ONLY FOR TRAINING PURPOSES! 
+AND WERE TALKING ABOUT MERGING TWO BRANCHES

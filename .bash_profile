@@ -1,15 +1,3 @@
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
-I_RED='\[\033[0;91m\]'
-R_RED='\[\033[0;31m\]'
-R_YELLOW='\[\033[0;33m\]'
-R_GREEN='\[\033[0;32m\]'
-R_CYAN='\[\033[0;36m\]'
-RESET='\[\033[0m\]'
-
-PS1="${R_GREEN}[${R_YELLOW}\t ${R_CYAN}\w${I_RED} \$(__git_ps1) ${R_GREEN}]:${RESET}"
-
 ##### GENERAL ##
 alias bpe='sudo nano ~/.bash_profile'
 alias bpr='source ~/.bash_profile
@@ -49,26 +37,3 @@ alias go=go_to_dir
 ##### CLEANERS ##
 alias cls="clear"
 
-alias cleanup="
-sudo find . -name "*.DS_Store" -print;
-sudo find . -name "*.DS_Store" -print;
-sudo find . -name "*._DS_Store" -print;
-sudo find . -name "._.DS_Store" -print;
-sudo find . -name ".DS_Store" -print;
-sudo find . -name "Thumbs.db" -print;
-sudo find . -name "._.*" -print;
-sudo find . -name "._*" -print ;
-sudo find . -name "*.DS_Store" -delete;
-sudo find . -name "*.DS_Store" -delete;
-sudo find . -name "*._DS_Store" -delete;
-sudo find . -name "._.DS_Store" -delete;
-sudo find . -name ".DS_Store" -delete;
-sudo find . -name "Thumbs.db" -delete;
-sudo find . -name "._.*" -delete;
-sudo find . -name "._*" -delete ;
-"
-alias lara-wipe="
-composer dumpautoload;
-php artisan cache:clear;
-php artisan clear-compiled;
-"
